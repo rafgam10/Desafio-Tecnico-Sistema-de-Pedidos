@@ -11,6 +11,8 @@ class Usuario(db.Model):
     email = Column(String(255), nullable=False)
     senha = Column(String(255), nullable=False)
     
+    pedidos = db.relationship("Pedido", back_populates="usuario")
+    
     def __init__(self, nome, email, senha):
         self.nome = nome
         self.email = email
