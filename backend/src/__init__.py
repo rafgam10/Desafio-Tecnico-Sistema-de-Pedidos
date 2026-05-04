@@ -13,6 +13,11 @@ def create_app():
     try:
         from .routes import register_routes
         register_routes(app)
+        
+        from src.models.usuarios_model import Usuario
+        from src.models.pedidos_model import Pedido
+        from src.models.itens_pedido_model import Itens
+        
     except Exception:
         pass
 
