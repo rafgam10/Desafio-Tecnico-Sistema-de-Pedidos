@@ -8,7 +8,7 @@ class Usuario(db.Model):
     
     id = Column(Integer, primary_key=True)
     nome = Column(String(255), nullable=False)
-    email = Column(String(255), nullable=False)
+    email = Column(String(255), unique=True, nullable=False)
     senha = Column(String(255), nullable=False)
     
     pedidos = db.relationship("Pedido", back_populates="usuario")
